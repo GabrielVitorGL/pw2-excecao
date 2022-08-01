@@ -10,6 +10,7 @@ public class ClienteService {
     public void salvar(Cliente cliente) {
         ValidatorUtil.validarCPF(cliente.getCpf());
         ValidatorUtil.validarNascimento(cliente.getNascimento());
+        ValidatorUtil.validarNome(cliente.getNome());
         database.add(cliente);
     }
 

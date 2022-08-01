@@ -110,8 +110,12 @@ public class FrmExemplo extends JFrame {
 				return;
 			}
 
-			new ClienteService().salvar(buildCliente());
-			showMessageDialog(this, "Cadastro realizado com sucesso");
+			try {
+				new ClienteService().salvar(buildCliente());
+				showMessageDialog(this, "Cadastro realizado com sucesso");
+			} catch (RuntimeException e) {
+				showMessageDialog(this, e.getMessage());
+			}
 
 		};
 	}
