@@ -41,8 +41,9 @@ public class ValidatorUtil {
 
 		LocalDate plus18Years = value.plusYears(18);
 		if (plus18Years.isAfter(LocalDate.now())) {
-			//TODO Implementar o lancamento da excecao
+			throw new RuntimeException("Você é menor de idade");
 		}
+		
 	}
 
 	public static void validarNome(String value) {
